@@ -81,25 +81,25 @@ void interactive() {
 }
 
 int main() {
-    Array<std::shared_ptr<Figure<double>>> poly_array;
+    Array<std::shared_ptr<Figure<double>>> figs;
     
-    poly_array.add(std::make_shared<Triangle<double>>(0.0, 0.0, 4.0, 3.0));
-    poly_array.add(std::make_shared<Square<double>>(1.0, 1.0, 2.0));
-    poly_array.add(std::make_shared<Rectangle<double>>(2.0, 2.0, 3.0, 4.0));
+    figs.add(std::make_shared<Triangle<double>>(0.0, 0.0, 4.0, 3.0));
+    figs.add(std::make_shared<Square<double>>(1.0, 1.0, 2.0));
+    figs.add(std::make_shared<Rectangle<double>>(2.0, 2.0, 3.0, 4.0));
     
-    std::cout << poly_array;
-    poly_array.print_centers();
-    poly_array.print_areas();
-    poly_array.print_total_area();
+    std::cout << figs;
+    figs.print_centers();
+    figs.print_areas();
+    figs.print_total_area();
 
-    Array<std::shared_ptr<Square<double>>> square_array;
-    square_array.add(std::make_shared<Square<double>>(0.0, 0.0, 2.0));
-    square_array.add(std::make_shared<Square<double>>(5.0, 5.0, 3.0));
-    square_array.add(std::make_shared<Square<double>>(10.0, 10.0, 1.0));
+    Array<std::shared_ptr<Square<double>>> squares;
+    squares.add(std::make_shared<Square<double>>(0.0, 0.0, 2.0));
+    squares.add(std::make_shared<Square<double>>(5.0, 5.0, 3.0));
+    squares.add(std::make_shared<Square<double>>(10.0, 10.0, 1.0));
     
-    std::cout << square_array;
-    square_array.print_centers();
-    square_array.print_total_area();
+    std::cout << squares;
+    squares.print_centers();
+    squares.print_total_area();
     
 
     interactive();

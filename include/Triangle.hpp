@@ -20,7 +20,7 @@ public:
         this->amountOfPoints = 3;
         this->points = std::make_unique<std::unique_ptr<Point<T>>[]>(3);
         this->points[0] = std::make_unique<Point<T>>(x, y);
-        this->points[1] = std::make_unique<Point<T>>(x + base/2, y + height);
+        this->points[1] = std::make_unique<Point<T>>(x + base / 2, y + height);
         this->points[2] = std::make_unique<Point<T>>(x + base, y);
     }
 
@@ -35,7 +35,7 @@ public:
         T x2 = this->points[1]->x, y2 = this->points[1]->y;
         T x3 = this->points[2]->x, y3 = this->points[2]->y;
         
-        return std::abs((x1*(y2 - y3) + x2*(y3 - y1) + x3*(y1 - y2)) / 2.0);
+        return static_cast<double>(std::abs((x1 - x3) * (y2 - y1) / 2.0));
     }
 
     void print(std::ostream& os) const override {

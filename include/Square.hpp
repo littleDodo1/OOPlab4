@@ -17,6 +17,7 @@ public:
     Square(T x, T y, T side) {
         if (side <= T{0})
             throw std::invalid_argument("НЕКОРРЕКТНЫЙ ВВОД");
+            
         this->amountOfPoints = 4;
         this->points = std::make_unique<std::unique_ptr<Point<T>>[]>(4);
         this->points[0] = std::make_unique<Point<T>>(x, y);
@@ -46,6 +47,7 @@ public:
         is >> x >> y >> s;
         if (!is || s <= T{0})
             throw std::invalid_argument("НЕКОРРЕКТНЫЙ ВВОД");
+
         this->points[0] = std::make_unique<Point<T>>(x, y);
         this->points[1] = std::make_unique<Point<T>>(x, y + s);
         this->points[2] = std::make_unique<Point<T>>(x + s, y + s);
@@ -55,9 +57,11 @@ public:
 
     std::unique_ptr<Figure<T>> copy() const override {
         auto newPoints = std::make_unique<std::unique_ptr<Point<T>>[]>(4);
+
         for (size_t i = 0; i < 4; ++i) {
             newPoints[i] = std::make_unique<Point<T>>(*this->points[i]);
         }
+
         auto result = std::make_unique<Square>();
         result->amountOfPoints = 4;
         result->points = std::move(newPoints);
@@ -67,8 +71,10 @@ public:
     Square(const Square& other)
         : Figure<T>() {
         this->amountOfPoints = other.amountOfPoints;
+
         if (other.points) {
             this->points = std::make_unique<std::unique_ptr<Point<T>>[]>(this->amountOfPoints);
+
             for (size_t i = 0; i < this->amountOfPoints; ++i) {
                 if (other.points[i]) {
                     this->points[i] = std::make_unique<Point<T>>(*other.points[i]);
@@ -87,8 +93,10 @@ public:
     Square& operator=(const Square& other) {
         if (this != &other) {
             this->amountOfPoints = other.amountOfPoints;
+
             if (other.points) {
                 this->points = std::make_unique<std::unique_ptr<Point<T>>[]>(this->amountOfPoints);
+
                 for (size_t i = 0; i < this->amountOfPoints; ++i) {
                     if (other.points[i]) {
                         this->points[i] = std::make_unique<Point<T>>(*other.points[i]);

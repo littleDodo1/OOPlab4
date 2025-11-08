@@ -17,6 +17,7 @@ public:
     Rectangle(T x, T y, T w, T h) {
         if (w <= T{0} || h <= T{0})
             throw std::invalid_argument("НЕКОРРЕКТНЫЙ ВВОД");
+            
         this->amountOfPoints = 4;
         this->points = std::make_unique<std::unique_ptr<Point<T>>[]>(4);
         this->points[0] = std::make_unique<Point<T>>(x, y);
