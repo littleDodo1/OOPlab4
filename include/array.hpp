@@ -30,6 +30,7 @@ public:
         if (index >= data.size()) {
             throw std::out_of_range("Индекс за пределами массива");
         }
+
         data.erase(data.begin() + index);
     }
 
@@ -37,6 +38,7 @@ public:
         if (index >= data.size()) {
             throw std::out_of_range("Индекс за пределами массива");
         }
+
         return data[index];
     }
 
@@ -44,20 +46,24 @@ public:
         if (index >= data.size()) {
             throw std::out_of_range("Индекс за пределами массива");
         }
+
         return data[index];
     }
 
     double allArea() const {
         double otv = 0.0;
+
         for (size_t i = 0; i < data.size(); ++i) {
             otv += static_cast<double>(*data[i]);
         }
+
         return otv;
     }
 
     void print_centers() const {
         std::cout << "Геометрические центры фигур:" << std::endl;
-        for (size_t i = 0; i < data.size(); ++i) {
+
+        for (size_t i = 0; i < data.size(); i++) {
             auto center = data[i]->center();
             std::cout << i << ": (" << center.x << ", " << center.y << ")" << std::endl;
         }
@@ -65,7 +71,8 @@ public:
 
     void print_areas() const {
         std::cout << "Площади фигур:" << std::endl;
-        for (size_t i = 0; i < data.size(); ++i) {
+        
+        for (size_t i = 0; i < data.size(); i++) {
             std::cout << i << ": " << static_cast<double>(*data[i]) << std::endl;
         }
     }
