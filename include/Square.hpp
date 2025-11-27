@@ -67,5 +67,4 @@ public:
         result->points = std::move(newPoints);
         return result;
     }
-
 };
