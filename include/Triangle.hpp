@@ -42,7 +42,7 @@ public:
 
     void print(std::ostream& os) const override {
         os << "Треугольник с вершинами: ";
-        this->printPoints(os);
+        this->print_points(os);
     }
 
     void read(std::istream& is) override {

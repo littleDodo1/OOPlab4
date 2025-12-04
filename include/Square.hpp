@@ -39,7 +39,7 @@ public:
 
     void print(std::ostream& os) const override {
         os << "Квадрат с вершинами: ";
-        this->printPoints(os);
+        this->print_points(os);
     }
 
     void read(std::istream& is) override {

@@ -202,7 +202,6 @@ CMakeFiles/lab4.dir/src/main.cpp.o: \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/donot/Projects/OOPlabs/lab4/src/../include/Rectangle.hpp \
  /home/donot/Projects/OOPlabs/lab4/src/../include/Figure.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -227,5 +226,6 @@ CMakeFiles/lab4.dir/src/main.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
+ /home/donot/Projects/OOPlabs/lab4/src/../include/Rectangle.hpp \
  /home/donot/Projects/OOPlabs/lab4/src/../include/Square.hpp \
  /home/donot/Projects/OOPlabs/lab4/src/../include/Triangle.hpp

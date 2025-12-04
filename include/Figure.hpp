@@ -3,6 +3,7 @@
 #include <memory>
 #include <cmath>
 #include <concepts>
+#include "Figure.hpp"
 
 template <class T>
 concept Scalar = std::is_arithmetic_v<T>;
@@ -37,7 +38,7 @@ public:
         return area();
     }
 
-    virtual void printPoints(std::ostream& os) const {
+    virtual void print_points(std::ostream& os) const {
         for (size_t i = 0; i < amountOfPoints; ++i) {
             if (points[i]) {
                 os << "(" << points[i]->x << ", " << points[i]->y << ")";
