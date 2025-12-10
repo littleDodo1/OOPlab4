@@ -3,7 +3,6 @@
 #include <memory>
 #include <cmath>
 #include <concepts>
-#include "Figure.hpp"
 
 template <class T>
 concept Scalar = std::is_arithmetic_v<T>;

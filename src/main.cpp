@@ -34,64 +34,58 @@ int main() {
 
     std::string cmd;
     while (std::cin >> cmd) {
-        try {
-            if (cmd == "1") {
-                double x, y, base, height;
-                std::cout << "x y основание высота: ";
-                std::cin >> x >> y >> base >> height;
-                arr.add(std::make_shared<Triangle<double>>(x, y, base, height));
-                std::cout << "Треугольник добавлен." << std::endl;
+        if (cmd == "1") {
+            double x, y, base, height;
+            std::cout << "x y основание высота: ";
+            std::cin >> x >> y >> base >> height;
+            arr.add(std::make_shared<Triangle<double>>(x, y, base, height));
+            std::cout << "Треугольник добавлен." << std::endl;
 
-            } else if (cmd == "2") {
-                double x, y, s;
-                std::cout << "x y сторона: ";
-                std::cin >> x >> y >> s;
-                arr.add(std::make_shared<Square<double>>(x, y, s));
-                std::cout << "Квадрат добавлен." << std::endl;
+        } else if (cmd == "2") {
+            double x, y, s;
+            std::cout << "x y сторона: ";
+            std::cin >> x >> y >> s;
+            arr.add(std::make_shared<Square<double>>(x, y, s));
+            std::cout << "Квадрат добавлен." << std::endl;
 
-            } else if (cmd == "3") {
-                double x, y, w, h;
-                std::cout << "x y ширина высота: ";
-                std::cin >> x >> y >> w >> h;
-                arr.add(std::make_shared<Rectangle<double>>(x, y, w, h));
-                std::cout << "Прямоугольник добавлен." << std::endl;
+        } else if (cmd == "3") {
+            double x, y, w, h;
+            std::cout << "x y ширина высота: ";
+            std::cin >> x >> y >> w >> h;
+            arr.add(std::make_shared<Rectangle<double>>(x, y, w, h));
+            std::cout << "Прямоугольник добавлен." << std::endl;
 
-            } else if (cmd == "4") {
-                arr.print_total_area();
+        } else if (cmd == "4") {
+            arr.print_total_area();
 
-            } else if (cmd == "5") {
-                if (arr.getSize() == 0) std::cout << "Нет фигур." << std::endl;
-                else arr.print_centers();
+        } else if (cmd == "5") {
+            if (arr.getSize() == 0) std::cout << "Нет фигур." << std::endl;
+            else arr.print_centers();
 
-            } else if (cmd == "6") {
-                if (arr.getSize() == 0) std::cout << "Нет фигур." << std::endl;
-                else arr.print_areas();
+        } else if (cmd == "6") {
+            if (arr.getSize() == 0) std::cout << "Нет фигур." << std::endl;
+            else arr.print_areas();
 
-            } else if (cmd == "7") {
-                if (arr.getSize() == 0) std::cout << "Нет фигур." << std::endl;
-                else std::cout << arr;
+        } else if (cmd == "7") {
+            if (arr.getSize() == 0) std::cout << "Нет фигур." << std::endl;
+            else std::cout << arr;
 
-            } else if (cmd == "8") {
-                if (arr.getSize() == 0) {
-                    std::cout << "Нет фигур для удаления." << std::endl;
-                } else {
-                    size_t idx;
-                    std::cout << "Индекс (от 0 до " << arr.getSize() - 1 << "): ";
-                    std::cin >> idx;
-                    arr.remove(idx);
-                    std::cout << "Фигура удалена." << std::endl;
-                }
-
-            } else if (cmd == "0") {
-                break;
-
+        } else if (cmd == "8") {
+            if (arr.getSize() == 0) {
+                std::cout << "Нет фигур для удаления." << std::endl;
             } else {
-                std::cout << "Неизвестная команда." << std::endl;
+                size_t idx;
+                std::cout << "Индекс (от 0 до " << arr.getSize() - 1 << "): ";
+                std::cin >> idx;
+                arr.remove(idx);
+                std::cout << "Фигура удалена." << std::endl;
             }
-        } catch (const std::exception& e) {
-            std::cout << "Ошибка: " << e.what() << std::endl;
-            std::cin.clear();
-            std::cin.ignore(10000, '\n');
+
+        } else if (cmd == "0") {
+            break;
+
+        } else {
+            std::cout << "Неизвестная команда." << std::endl;
         }
 
         if (cmd != "0") {
